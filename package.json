@@ -1,0 +1,15 @@
+{
+  "name": "aws-terraform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "zip": "powershell -Command \"if (Test-Path ./dist/lambda.zip) { Remove-Item ./dist/lambda.zip }; Compress-Archive -Path ./dist/* -DestinationPath ./dist/lambda.zip\"",
+    "prepare": "npm run build && npm run zip"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.3"
+  }
+}
