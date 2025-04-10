@@ -5,11 +5,12 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "zip": "powershell -Command \"if (Test-Path ./dist/lambda.zip) { Remove-Item ./dist/lambda.zip }; Compress-Archive -Path ./dist/* -DestinationPath ./dist/lambda.zip\"",
+    "zip": "ts-node scripts/zip.ts",
     "prepare": "npm run build && npm run zip"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
